@@ -5,7 +5,7 @@ dotenv.config({ path: '../../../.env' });
 
 const changeCase = require('change-case');
 const camelcaseKeys = require('camelcase-keys');
-const config = require('@config');
+const config = require('#config');
 
 const { connectionString, database, poolMin, poolMax } = config.postgres;
 
@@ -15,14 +15,14 @@ module.exports = {
   database,
   pool: {
     min: poolMin,
-    max: poolMax,
+    max: poolMax
   },
   wrapIdentifier: (value, origImpl) => origImpl(changeCase.snakeCase(value)),
-  postProcessResponse: result => {
+  postProcessResponse: (result) => {
     const items = result && result.rows ? result.rows : result;
 
     if (isArray(items)) {
-      return items.map(r => {
+      return items.map((r) => {
         if (isPlainObject(r)) {
           return camelcaseKeys(r);
         }
@@ -33,5 +33,5 @@ module.exports = {
       return camelcaseKeys(items);
     }
     return items;
-  },
+  }
 };

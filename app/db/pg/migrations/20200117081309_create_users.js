@@ -1,4 +1,4 @@
-const { USERS_TABLE, roles } = require('@constants');
+const { USERS_TABLE, roles } = require('#constants');
 
 exports.up = (knex) =>
   knex.schema.createTable(USERS_TABLE, (table) => {

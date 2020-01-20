@@ -13,10 +13,10 @@
   "author": "Pavlo Vasylkivskyi",
   "license": "ISC",
   "_moduleAliases": {
-    "@root": ".",
-    "@config": "app/config/index.js",
-    "@knex": "app/db/pg/knex.js",
-    "@constants": "app/constants"
+    "#root": ".",
+    "#config": "app/config/index.js",
+    "#knex": "app/db/pg/knex.js",
+    "#constants": "app/constants"
   },
   "dependencies": {
     "camelcase-keys": "^6.1.1",

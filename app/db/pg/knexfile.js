@@ -20,7 +20,7 @@ module.exports = {
   wrapIdentifier: (value, origImpl) => origImpl(changeCase.snakeCase(value)),
   postProcessResponse: (result) => {
     const items = result && result.rows ? result.rows : result;
-
+    console.log(items);
     if (isArray(items)) {
       return items.map((r) => {
         if (isPlainObject(r)) {

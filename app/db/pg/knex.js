@@ -3,7 +3,7 @@ const config = require('#config');
 const knexFile = require('./knexfile');
 
 const { connectionString } = config.postgres;
-
+// just a test comment
 const knex = driver(knexFile);
 
 knex

@@ -2,7 +2,6 @@ const { USERS_TABLE, roles } = require('#constants');
 
 exports.up = (knex) =>
   knex.schema.createTable(USERS_TABLE, (table) => {
-    console.log(table, USERS_TABLE);
     table.increments();
     table.string('email').notNull();
     table.string('password').notNull();
